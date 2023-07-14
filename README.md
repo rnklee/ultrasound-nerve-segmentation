@@ -14,7 +14,11 @@ During the exploratory data analysis phase, I focused on the following tasks:
 2. exploring the appearances of the nerves and improving their visibility,
 3. checking data imbalance.
 
-For more details on the exploratory data analysis, please refer to the [nerve_segmentation_exploratory.ipynb](nerve_segmentation_exploratory.ipynb) notebook.
+For examining and resolving conflicts in the ground truth masks, we first pairwise compared the images and selected pairs where the images exhibited a significant resemblance (SSIM > 0.99). Then, any image whose mask does not contain nerves while its counterpart does was removed from the training set to resolve the conflict. For more details, please refer to section 1.1 in [nerve_segmentation_exploratory.ipynb](nerve_segmentation_exploratory.ipynb).
+
+To explore the appearances of the nerves and enhance their visibility, we tried two methods, histogram equalization and CLAHE, although neither of them was actually employed in the later modeling process. For more details on the exploratory data analysis, please refer to section 1.2 of [nerve_segmentation_exploratory.ipynb](nerve_segmentation_exploratory.ipynb).
+
+Finally, upon checking data imbalance, we discovered that approximately 40% of the images contained nerves and the size of the nerves (when present) accounted for approximately 3.2% of the image size on average. More can be found in section 2.1 of [nerve_segmentation_exploratory.ipynb](nerve_segmentation_exploratory.ipynb).
 
 ## Segmentation Model
 This part is currently undergoing some edits, and more explanations will be added soon.
