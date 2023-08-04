@@ -21,4 +21,4 @@ To explore the appearances of the nerves and enhance their visibility, we tried 
 Finally, upon checking data imbalance, we discovered that approximately 40% of the images contained nerves and the size of the nerves (when present) accounted for approximately 3.2% of the image size on average. More can be found in section 2.1 of [nerve_segmentation_exploratory.ipynb](nerve_segmentation_exploratory.ipynb).
 
 ## Segmentation Model
-This part is currently undergoing some edits, and more explanations will be added soon.
+This part is currently undergoing some edits, and more explanations will be added soon...
