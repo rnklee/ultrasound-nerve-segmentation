@@ -54,4 +54,4 @@ Ensembling tends to reduce the mask size and the first step (of lowering the pos
 A few things I could try:
 
 1. Examining subject 41-47 more carefully. This might have helped us understanding the test set and possibly find more subject to include in/exclude from training.
-2. Better pipeline for find tuning the parameters for ensembling. Sinec biggest improvement usually came from the "postprocessing" steps, it might be possible to increase the private LB score.
+2. Better pipeline for find tuning the parameters for ensembling. Since biggest improvement usually came from the "postprocessing" steps, it might be possible to increase the private LB score.
