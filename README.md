@@ -17,9 +17,9 @@ For examining conflicts in the ground truth masks, we first pairwise compared th
 
 Also upon checking data imbalance, we discovered that approximately 40% of the images contained nerves and the size of the nerves (when present) accounted for approximately 3.2% of the image size on average. The percentage of non empty ground truth masks also varied greatly depending on the subject. 
 
-To see the details, please refer to [basic_exploratory.ipynb](basic_exploratory.ipynb) (to be added).
+To explore the appearances of the nerves and enhance their visibility, we tried two methods, histogram equalization and CLAHE, although neither of them was actually employed in the later modeling process. 
 
-To explore the appearances of the nerves and enhance their visibility, we tried two methods, histogram equalization and CLAHE, although neither of them was actually employed in the later modeling process. For more details on the exploratory data analysis, please refer to section 1.2 of [nerve_segmentation_exploratory.ipynb](nerve_segmentation_exploratory.ipynb).
+For more details on the exploratory data analysis, please refer to [exploratory.ipynb](exploratory.ipynb).
 
 ## Segmentation
 Details of the model performance can be found in [Kaggle_score](Kaggle_scores.xlsx).
