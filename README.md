@@ -34,7 +34,7 @@ The performance of individual models (i.e. before ensembling) is summarized in t
 | BCE+Dice            | Dice                   | UNet++     | Default                                  |     0.670288 |
 | BCE+Dice            | Dice                   | UNet       | Subject41-47 included, conflicts removed |     0.652262 |
 
-The best performing model was obtained by ensembling five ResNet34-DeepLabV3+ (from five folds) in the manner described below.
+The best performing model was obtained by ensembling five ResNet34-DeepLabV3+ (from five folds) in the manner described below. With the best performing model, we could achieve a Dice score of 0.72 on the private leader board.
 
 Details about the performance of each model can be found in [Kaggle_score](Kaggle_scores.xlsx).
 
