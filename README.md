@@ -48,7 +48,7 @@ Ensembling produced better scores than single models in general. For the final m
 2. Pixelwise average was taken from the predictions and was thresholded at 0.5 to generated a new prediction (i.e. voting).
 3. If the resulting mask has size <500, then it was ignored.
 
-Ensembling tends to reduce the mask size and the first step (of lowering the possibility threshold to 0.35) was added to counterbalance this. The final step was adopted as it was an easy way to filter out some false positive masks while minimising the loss coming from incorrectly removing true positive masks. 
+Ensembling tends to reduce the mask size and the first step (of lowering the possibility threshold to 0.35) was added to counterbalance this. The final step was adopted as it was an easy way to filter out some false positive masks while minimising the loss coming from removing true positive masks. 
 
 ## Afterthoughts
 A few things I could try:
