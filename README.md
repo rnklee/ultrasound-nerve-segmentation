@@ -22,7 +22,21 @@ To explore the appearances of the nerves and enhance their visibility, we tried 
 For more details on the exploratory data analysis, please refer to [exploratory.ipynb](exploratory.ipynb).
 
 ## Segmentation
-Details of the model performance can be found in [Kaggle_score](Kaggle_scores.xlsx).
+The performance of individual models (i.e. before ensembling) is summarized in the table below.
+
+| Loss function       | Metric used for saving | Decoder    | Dataset                                  | Private mean |
+|---------------------|------------------------|------------|------------------------------------------|--------------|
+| BCE+Dice            | Dice                   | UNet       | Default                                  |      0.67237 |
+| Focal+ Dice         | Dice                   | UNet       | Default                                  |     0.671044 |
+| weighted Focal+Dice | weighted Dice          | UNet       | Default                                  |       0.6719 |
+| BCE+Dice            | Dice                   | DeepLabV3+ | Default                                  |     0.681546 |
+| BCE+Dice            | Dice                   | FPN        | Default                                  |     0.670692 |
+| BCE+Dice            | Dice                   | UNet++     | Default                                  |     0.670288 |
+| BCE+Dice            | Dice                   | UNet       | Subject41-47 included, conflicts removed |     0.652262 |
+
+The best performing model was obtained by ensembling five ResNet34-DeepLabV3+ (from five folds) in the manner described below.
+
+Details about the performance of each model can be found in [Kaggle_score](Kaggle_scores.xlsx).
 
 ### Train/Validation set
 For the train and test the model, 5-fold cross-validation was used. Each training, validation pair was splitted subjectwise and the ratio of the samples with ground truth masks in each set was kept at 39%~44%. There also was a local test set consisting of subjects 41-47 (again subjectwise disjoint from all training/validation sets), kept for tuning hyperparameters for ensembling methods. However, it was observed that there was a huge discrepancy between the models' performance on these subjects and the actual Kaggle set and for this reason, we ceased to use these for local testing. It was also observed that incorporating this test set back into training harmed models' peformance on Kaggle private LB. Combined with the aforementioned discrepancies of models' performance, we could only suspect that there is a significant difference between these test subjects and the actual Kaggle test set and these subjects were left out of training for the rest of the experiment.
